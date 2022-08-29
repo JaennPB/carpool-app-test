@@ -31,24 +31,36 @@ const CarbonMarketplaceScreen: React.FC = () => {
     <Flex flex={1} bg="white" p={5}>
       <Box alignItems="center" mb={10}>
         <FontAwesome5 name="shopping-bag" size={60} color="#14b8a6" />
-        <Text mt={5}>Complete quests for more Carbon Credits</Text>
+        <Text mt={5} fontFamily="Poppins_400Regular">
+          Complete quests for more Carbon Credits
+        </Text>
       </Box>
       <Box flexDir="row" bg="muted.100" mb={10} borderRadius={10}>
         <Button
           bg={activeScreen === "1" ? "black" : "muted.100"}
-          _text={{ color: activeScreen === "1" ? "white" : "muted.400" }}
+          _text={{
+            color: activeScreen === "1" ? "white" : "muted.400",
+            fontFamily: "Poppins_400Regular",
+          }}
           borderRadius={10}
           onPress={navigateToNestedScreenHandler.bind(this, "1")}
           colorScheme="black"
         >
           Physical Goods
         </Button>
-        <Button bg="muted.100" _text={{ color: "muted.400" }} borderRadius={10}>
+        <Button
+          bg="muted.100"
+          _text={{ color: "muted.400", fontFamily: "Poppins_400Regular" }}
+          borderRadius={10}
+        >
           Digital Goods
         </Button>
         <Button
           bg={activeScreen === "2" ? "black" : "muted.100"}
-          _text={{ color: activeScreen === "2" ? "white" : "muted.400" }}
+          _text={{
+            color: activeScreen === "2" ? "white" : "muted.400",
+            fontFamily: "Poppins_400Regular",
+          }}
           borderRadius={10}
           onPress={navigateToNestedScreenHandler.bind(this, "2")}
           colorScheme="black"

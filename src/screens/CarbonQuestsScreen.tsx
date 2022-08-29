@@ -55,25 +55,38 @@ const CarbonQuestsScreen: React.FC = () => {
           size={70}
           color="#14b8a6"
         />
-        <Text>Complete quests for more Carbon Credits</Text>
+        <Text fontFamily="Poppins_400Regular">
+          Complete quests for more Carbon Credits
+        </Text>
       </Box>
-      <HStack bg="muted.100" borderRadius={10} p={5} space={2} mb={10}>
+      <HStack
+        bg="muted.100"
+        borderRadius={10}
+        p={5}
+        space={2}
+        mb={10}
+        alignItems="center"
+      >
         <Box
           bg="teal.500"
           alignItems="center"
           justifyContent="center"
-          h={50}
-          w={50}
+          h={41}
+          w={41}
           borderRadius={50}
         >
           <Feather name="hexagon" size={30} color="white" />
         </Box>
         <Flex justify="center">
-          <Text fontWeight="semibold">
+          <Text fontFamily="Poppins_600SemiBold">
             Invite 5 friends and earn 30 Carbon Credits
           </Text>
-          <Text>Do you love our mission? Let your friends</Text>
-          <Text>know about the carbon games.</Text>
+          <Text fontFamily="Poppins_400Regular">
+            Do you love our mission? Let your friends
+          </Text>
+          <Text fontFamily="Poppins_400Regular">
+            know about the carbon games.
+          </Text>
         </Flex>
       </HStack>
       <FlatList

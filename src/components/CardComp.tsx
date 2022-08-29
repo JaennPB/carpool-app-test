@@ -39,7 +39,7 @@ const CardComp: React.FC<Props> = ({ title, credits, description, timer }) => {
           alignItems="center"
         >
           <Feather name="hexagon" size={12} color="white" />
-          <Text color="white" ml={1}>
+          <Text color="white" ml={1} fontFamily="Poppins_400Regular">
             {credits}
           </Text>
         </Box>
@@ -56,29 +56,40 @@ const CardComp: React.FC<Props> = ({ title, credits, description, timer }) => {
             size={13}
             color="white"
           />
-          <Text color="white" ml={1}>
+          <Text color="white" ml={1} fontFamily="Poppins_400Regular">
             {timer}
           </Text>
         </Box>
       </Flex>
       <Flex mt={12}>
-        <Text fontWeight="semibold" color="white" fontSize={18}>
+        <Text
+          fontWeight="semibold"
+          color="white"
+          fontSize={17}
+          fontFamily="Poppins_400Regular"
+        >
           {title}
         </Text>
-        <Text color="white" fontSize={13}>
+        <Text color="white" fontSize={13} fontFamily="Poppins_400Regular">
           {description}
         </Text>
       </Flex>
       <Flex flexDir="row" justify="space-between">
         <Box>
-          <Text color="white">Goal</Text>
-          <Text color="white">Save 100kg CO2</Text>
+          <Text color="white" fontFamily="Poppins_400Regular">
+            Goal
+          </Text>
+          <Text color="white" fontFamily="Poppins_400Regular">
+            Save 100kg CO2
+          </Text>
           <Box bg="muted.400" w={100} h={3} borderRadius={20} mt={2}>
             <Box bg="teal.500" w="45%" h={3} borderRadius={20} />
           </Box>
         </Box>
         <Box>
-          <Text color="white">Participating</Text>
+          <Text color="white" fontFamily="Poppins_400Regular">
+            Participating
+          </Text>
           <Flex flexDir="row" position="relative">
             <Box
               bg="muted.100"
@@ -92,7 +103,9 @@ const CardComp: React.FC<Props> = ({ title, credits, description, timer }) => {
               alignItems="center"
               justifyContent="center"
             >
-              <Text fontSize={11}>1.2K</Text>
+              <Text fontSize={11} fontFamily="Poppins_400Regular">
+                1.2K
+              </Text>
             </Box>
             <Box
               bg="muted.100"

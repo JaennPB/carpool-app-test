@@ -6,79 +6,102 @@ import CarbonMarketplaceScreen from "./src/screens/CarbonMarketplaceScreen";
 import CarbonQuestsScreen from "./src/screens/CarbonQuestsScreen";
 
 import { Entypo } from "@expo/vector-icons";
+import { StatusBar } from "expo-status-bar";
+
+import {
+  Poppins_400Regular,
+  Poppins_600SemiBold,
+  useFonts,
+} from "@expo-google-fonts/poppins";
 
 const Stack = createNativeStackNavigator<NavParams>();
 
 export default function App() {
+  let [fontsLoaded] = useFonts({
+    Poppins_400Regular,
+    Poppins_600SemiBold,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
-    <NativeBaseProvider>
-      <NavigationContainer>
-        <Stack.Navigator
-          screenOptions={{
-            headerShadowVisible: false,
-            headerTitle: "",
-          }}
-          initialRouteName="CarbonMarketplaceScreen"
-        >
-          <Stack.Screen
-            name="CarbonQuestsScreen"
-            component={CarbonQuestsScreen}
-            options={{
-              headerLeft: () => {
-                return (
-                  <HStack alignItems="center" space={3}>
-                    <Box
-                      bg="muted.100"
-                      p={2}
-                      borderRadius={50}
-                      h={10}
-                      w={10}
-                      alignItems="center"
-                      justifyContent="center"
-                    >
-                      <Entypo
-                        name="chevron-thin-left"
-                        size={20}
-                        color="#bcbcbc"
-                      />
-                    </Box>
-                    <Heading fontSize={20}>Carbon Quests</Heading>
-                  </HStack>
-                );
-              },
-            }}
-          />
-          <Stack.Screen
-            name="CarbonMarketplaceScreen"
-            component={CarbonMarketplaceScreen}
-            options={{
+    <>
+      <StatusBar />
+      <NativeBaseProvider>
+        <NavigationContainer>
+          <Stack.Navigator
+            screenOptions={{
+              headerShadowVisible: false,
               headerTitle: "",
-              headerLeft: () => {
-                return (
-                  <HStack alignItems="center" space={3}>
-                    <Box
-                      bg="muted.100"
-                      p={2}
-                      borderRadius={50}
-                      h={10}
-                      w={10}
-                      alignItems="center"
-                      justifyContent="center"
-                    >
-                      <Entypo
-                        name="chevron-thin-left"
-                        size={20}
-                        color="#bcbcbc"
-                      />
-                    </Box>
-                    <Heading fontSize={20}>Carbon Marketplace</Heading>
-                  </HStack>
-                );
-              },
             }}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </NativeBaseProvider>
+            initialRouteName="CarbonMarketplaceScreen"
+          >
+            <Stack.Screen
+              name="CarbonQuestsScreen"
+              component={CarbonQuestsScreen}
+              options={{
+                headerLeft: () => {
+                  return (
+                    <HStack alignItems="center" space={3}>
+                      <Box
+                        bg="muted.100"
+                        p={2}
+                        borderRadius={50}
+                        h={10}
+                        w={10}
+                        alignItems="center"
+                        justifyContent="center"
+                      >
+                        <Entypo
+                          name="chevron-thin-left"
+                          size={20}
+                          color="#bcbcbc"
+                        />
+                      </Box>
+                      <Heading fontSize={20} fontFamily="Poppins_600SemiBold">
+                        Carbon Quests
+                      </Heading>
+                    </HStack>
+                  );
+                },
+              }}
+            />
+            <Stack.Screen
+              name="CarbonMarketplaceScreen"
+              component={CarbonMarketplaceScreen}
+              options={{
+                headerTitle: "",
+                headerLeft: () => {
+                  return (
+                    <HStack alignItems="center" space={3}>
+                      <Box
+                        bg="muted.100"
+                        p={2}
+                        borderRadius={50}
+                        h={10}
+                        w={10}
+                        alignItems="center"
+                        justifyContent="center"
+                      >
+                        <Entypo
+                          name="chevron-thin-left"
+                          size={20}
+                          color="#bcbcbc"
+                        />
+                      </Box>
+                      <Heading fontSize={20} fontFamily="Poppins_600SemiBold">
+                        Carbon Marketplace
+                      </Heading>
+                    </HStack>
+                  );
+                },
+              }}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </NativeBaseProvider>
+    </>
   );
 }

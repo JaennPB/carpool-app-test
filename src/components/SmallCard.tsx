@@ -29,14 +29,21 @@ const SmallCard: React.FC<Props> = ({ title, credits, description, id }) => {
           resizeMode="cover"
         />
       </Box>
-      <Heading size="sm" mb={1}>
+      <Heading size="sm" mb={1} fontFamily="Poppins_600SemiBold">
         {title}
       </Heading>
-      <Text mb={1}>{description}</Text>
+      <Text mb={1} fontFamily="Poppins_400Regular">
+        {description}
+      </Text>
       <Flex flexDir="row" justifyContent="space-between">
         <Box flexDir="row" alignItems="center">
           <Feather name="hexagon" size={18} color="#14b8a6" />
-          <Text color="teal.600" fontWeight="bold" ml={1}>
+          <Text
+            color="teal.600"
+            fontWeight="bold"
+            ml={1}
+            fontFamily="Poppins_400Regular"
+          >
             {credits}
           </Text>
         </Box>
